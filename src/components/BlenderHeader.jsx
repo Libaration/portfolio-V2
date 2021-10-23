@@ -85,11 +85,11 @@ export class BlenderHeader extends Component {
 
   render() {
     return (
-      <Flex justifyContent="center">
+      <Flex justifyContent="center" overflow="hidden">
         <Box
           id="three"
           ref={this.rootRef}
-          w={[350, 500, 600]}
+          w={'100%'}
           h={[300, 400, 600]}
           pt={10}
         ></Box>
