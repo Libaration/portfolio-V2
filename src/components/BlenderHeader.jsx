@@ -4,14 +4,17 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import * as dat from 'dat.gui';
 import room from '../assets/room.gltf';
-import { Box, Flex } from '@chakra-ui/react';
+import { Box, Flex, useColorMode } from '@chakra-ui/react';
+
 export class BlenderHeader extends Component {
   constructor() {
     super();
     this.rootRef = React.createRef();
   }
+
   componentDidMount() {
-    const gui = new dat.GUI();
+    // const gui = new dat.GUI();
+
     const sizes = {
       width: this.rootRef.current.offsetWidth,
       height: this.rootRef.current.offsetHeight,
@@ -27,33 +30,25 @@ export class BlenderHeader extends Component {
         gltf.scene.scale.multiplyScalar(1 / 10);
         gltf.scene.position.x = 0;
         gltf.scene.position.y = -0.2;
-        gui.add(gltf.scene.position, 'x').max(10).min(-10);
-        gui.add(gltf.scene.position, 'y').max(10).min(-10);
-        gui.add(gltf.scene.position, 'z').max(10).min(-10);
-
         scene.add(gltf.scene);
       },
       function (error) {
         console.log(error);
       }
     );
-    const light = new THREE.DirectionalLight(0xffffff, 0.3);
-    light.castShadow = true;
-    light.shadow.radius = 8;
-    light.position.set(2, 2, 9);
-    scene.add(light);
-    const light2 = new THREE.DirectionalLight(0xffffff, 0.1);
-    light2.castShadow = true;
-    light2.shadow.radius = 8;
-    light2.position.set(9, 9, 0);
-    const filllight = new THREE.PointLight(0xffffff, 0.5);
-    filllight.castShadow = true;
-    filllight.position.set(0, 0, 1);
-    const pointlight = new THREE.PointLight(0xffffff, 1);
-    pointlight.position.set(9, 0, 0);
-    scene.add(filllight);
-    scene.add(pointlight);
-    scene.add(light2);
+    //Lights
+
+    const keyLight = new THREE.DirectionalLight(0x3373ff, 0.05);
+    keyLight.castShadow = false;
+    keyLight.shadow.radius = 8;
+    keyLight.position.set(10, 0, 0);
+    scene.add(keyLight);
+    const backLight = new THREE.SpotLight(0xff9333, 0.8);
+    backLight.position.set(0, 0.25, 0.16);
+    backLight.castShadow = true;
+    backLight.shadow.radius = 20;
+    scene.add(backLight);
+
     const camera = new THREE.PerspectiveCamera(
       45,
       sizes.width / sizes.height,
@@ -67,13 +62,10 @@ export class BlenderHeader extends Component {
       alpha: true,
     });
     const controls = new OrbitControls(camera, renderer.domElement);
-    controls.autoRotate = true;
+    // controls.autoRotate = true;
 
     camera.position.set(1, 0.1, 0);
 
-    gui.add(camera.position, 'x').max(10).min(-10);
-    gui.add(camera.position, 'y').max(10).min(-10);
-    gui.add(camera.position, 'z').max(10).min(-10);
     controls.update();
     renderer.setSize(sizes.width, sizes.height);
     renderer.shadowMap.enabled = true;
@@ -101,14 +93,16 @@ export class BlenderHeader extends Component {
         justifyContent="center"
         overflow="visible"
         h={[300, 400, 480]}
-        mt={-10}
+        mt={-12}
+        zIndex={0}
       >
         <Box
           overflow="visible"
           id="three"
           ref={this.rootRef}
           w={'100%'}
-          h={'102%'}
+          h={'130%'}
+          zIndex={0}
         ></Box>
       </Flex>
     );

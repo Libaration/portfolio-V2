@@ -18,7 +18,7 @@ export default function Banner() {
   const logoToggle = useColorModeValue(logolight, logo);
   return (
     <header>
-      <Flex align-items="center">
+      <Flex align-items="center" zIndex={2} position="relative">
         <Box>
           <Image src={logoToggle} h="auto" w={[300, 400, 500]} mt={1} />
         </Box>

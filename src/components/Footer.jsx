@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <Flex justifyContent="right">
       <Box>
-        <Text>Made with ❤️ using Chakra UI</Text>
+        <Text>Made with ❤️ using Chakra UI && React</Text>
       </Box>
       <Box ml={3}>
         <Image h={5} src={logo} />
