@@ -3,7 +3,7 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import * as dat from 'dat.gui';
-import room from '../assets/room.gltf';
+import roomRender from '../assets/roomRender.gltf';
 import { Box, Flex, useColorMode } from '@chakra-ui/react';
 
 export class BlenderHeader extends Component {
@@ -23,7 +23,7 @@ export class BlenderHeader extends Component {
 
     const loader = new GLTFLoader();
     loader.load(
-      room,
+      roomRender,
       function (gltf) {
         gltf.scene.scale.set(0.8, 0.8, 0.8);
         gltf.scene.rotation.set(0, 0, 0);
