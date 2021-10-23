@@ -29,10 +29,15 @@ export default function About() {
         </Heading>
       </Box>
 
-      <Text>
-        <br />I started coding in middle school using Visual Basic 6. It was
-        mostly creating hex/memory editors and packet loggers for online games
-        in C# and VB6. I've made the switch to Web Development and couldn't be
+      <Text
+        pl={['2rem', '2rem', '6em']}
+        pr={['2rem', '2rem', '6em']}
+        pt={5}
+        fontSize={['xs', 'xs', 's', 'md']}
+      >
+        I started coding in middle school using Visual Basic 6. It was mostly
+        creating hex/memory editors and packet loggers for online games in C#
+        and VB6. I've made the switch to Web Development and couldn't be
         happier. I love Front End design and working closely with customer
         facing UI. I graduated from Flatiron bootcamp where I really got to put
         everything together and dive into the full stack! I've worked

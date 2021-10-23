@@ -43,7 +43,7 @@ export class BlenderHeader extends Component {
     keyLight.shadow.radius = 8;
     keyLight.position.set(10, 0, 0);
     scene.add(keyLight);
-    const backLight = new THREE.SpotLight(0xff9333, 0.8);
+    const backLight = new THREE.SpotLight(0xffffff, 0.8);
     backLight.position.set(0, 0.25, 0.16);
     backLight.castShadow = true;
     backLight.shadow.radius = 20;
@@ -67,7 +67,8 @@ export class BlenderHeader extends Component {
     controls.enableDamping = true;
     controls.maxAzimuthAngle = (200 * Math.PI) / 80;
     controls.minAzimuthAngle = (160 * Math.PI) / 80;
-
+    controls.maxDistance = 2;
+    controls.minDistance = 0.3;
     camera.position.set(1, 0.1, 0);
 
     controls.update();
