@@ -11,6 +11,7 @@ export class BlenderHeader extends Component {
     this.rootRef = React.createRef();
   }
   componentDidMount() {
+    const gui = new dat.GUI();
     const sizes = {
       width: this.rootRef.current.offsetWidth,
       height: this.rootRef.current.offsetHeight,
@@ -21,8 +22,15 @@ export class BlenderHeader extends Component {
     loader.load(
       room,
       function (gltf) {
-        gltf.scene.scale.set(0.2, 0.2, 0.2);
-        gltf.scene.rotation.set(0, 4.5, 0);
+        gltf.scene.scale.set(0.8, 0.8, 0.8);
+        gltf.scene.rotation.set(0, 0, 0);
+        gltf.scene.scale.multiplyScalar(1 / 10);
+        gltf.scene.position.x = 0;
+        gltf.scene.position.y = -0.2;
+        gui.add(gltf.scene.position, 'x').max(10).min(-10);
+        gui.add(gltf.scene.position, 'y').max(10).min(-10);
+        gui.add(gltf.scene.position, 'z').max(10).min(-10);
+
         scene.add(gltf.scene);
       },
       function (error) {
@@ -47,12 +55,12 @@ export class BlenderHeader extends Component {
     scene.add(pointlight);
     scene.add(light2);
     const camera = new THREE.PerspectiveCamera(
-      40,
+      45,
       sizes.width / sizes.height,
       0.1,
       100
     );
-    camera.setFocalLength(150);
+
     scene.add(camera);
     const renderer = new THREE.WebGL1Renderer({
       antialias: true,
@@ -61,7 +69,11 @@ export class BlenderHeader extends Component {
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.autoRotate = true;
 
-    camera.position.set(9, 9, 9);
+    camera.position.set(1, 0.1, 0);
+
+    gui.add(camera.position, 'x').max(10).min(-10);
+    gui.add(camera.position, 'y').max(10).min(-10);
+    gui.add(camera.position, 'z').max(10).min(-10);
     controls.update();
     renderer.setSize(sizes.width, sizes.height);
     renderer.shadowMap.enabled = true;
@@ -85,13 +97,18 @@ export class BlenderHeader extends Component {
 
   render() {
     return (
-      <Flex justifyContent="center" overflow="hidden">
+      <Flex
+        justifyContent="center"
+        overflow="visible"
+        h={[300, 400, 480]}
+        mt={-10}
+      >
         <Box
+          overflow="visible"
           id="three"
           ref={this.rootRef}
           w={'100%'}
-          h={[300, 400, 600]}
-          pt={10}
+          h={'102%'}
         ></Box>
       </Flex>
     );

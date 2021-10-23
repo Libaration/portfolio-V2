@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Flex, Text } from '@chakra-ui/react';
 export default function About() {
   return (
-    <Box>
+    <Box mt={-1}>
       <Text align="center">
         I'm Cristian Deleon a Web Developer, Designer & Creator
         <br /> I started coding in middle school using Visual Basic 6. I was
