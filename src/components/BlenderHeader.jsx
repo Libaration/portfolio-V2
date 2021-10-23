@@ -62,7 +62,8 @@ export class BlenderHeader extends Component {
       alpha: true,
     });
     const controls = new OrbitControls(camera, renderer.domElement);
-    // controls.autoRotate = true;
+    controls.autoRotate = true;
+    controls.autoRotateSpeed = 0.5;
 
     camera.position.set(1, 0.1, 0);
 

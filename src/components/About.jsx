@@ -16,7 +16,11 @@ export default function About() {
       flexDirection="column"
       textAlign="center"
     >
-      <Box backgroundColor={lightDarkBoxBackground} borderRadius={15} w="3xl">
+      <Box
+        backgroundColor={lightDarkBoxBackground}
+        borderRadius={15}
+        w={['20rem', '20rem', '3xl']}
+      >
         <Heading color="white" p={2}>
           <Text bgGradient={lightDarkText} bgClip="text">
             Hi there 👋 <br />
