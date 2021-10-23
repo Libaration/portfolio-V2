@@ -1,41 +1,46 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import {
   Box,
-  Text,
-  Link,
-  VStack,
-  Code,
-  Grid,
   Flex,
-  theme,
   Menu,
   MenuButton,
   MenuItem,
   MenuList,
   IconButton,
+  Image,
+  useColorMode,
+  useColorModeValue,
 } from '@chakra-ui/react';
 import { ColorModeSwitcher } from '../ColorModeSwitcher';
-import hamburger from '../assets/hamburger.png';
 import { GiHamburgerMenu } from 'react-icons/gi';
+import logo from '../assets/logo.png';
+import logolight from '../assets/logolight.png';
 export default function Banner() {
+  const logoToggle = useColorModeValue(logolight, logo);
   return (
     <header>
-      <Menu>
-        <MenuButton
-          as={IconButton}
-          aria-label="Options"
-          variant="outline"
-          icon={<GiHamburgerMenu />}
-        ></MenuButton>
-        <MenuList>
-          <MenuItem>New Window</MenuItem>
-          <MenuItem>Open Closed Tab</MenuItem>
-          <MenuItem>Open File</MenuItem>
-        </MenuList>
-      </Menu>
-      <Flex align-items="center" justifyContent="space-between">
-        <Box></Box>
-        <Box></Box>
+      <Flex align-items="center" justifyContent="space-between" ml={2} mr={2}>
+        <Box>
+          <Image src={logoToggle} h="auto" w={[300, 400, 500]} mt={1} />
+        </Box>
+        <Box mt={2}>
+          <ColorModeSwitcher />
+        </Box>
+        <Box mt={2}>
+          <Menu>
+            <MenuButton
+              as={IconButton}
+              aria-label="Options"
+              variant="outline"
+              icon={<GiHamburgerMenu />}
+            ></MenuButton>
+            <MenuList>
+              <MenuItem>Home</MenuItem>
+              <MenuItem>Projects</MenuItem>
+              <MenuItem>About</MenuItem>
+            </MenuList>
+          </Menu>
+        </Box>
       </Flex>
     </header>
   );
