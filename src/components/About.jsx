@@ -30,7 +30,7 @@ export default function About() {
       </Box>
 
       <Text>
-        <br />I started coding in middle school using Visual Basic 6. I was
+        <br />I started coding in middle school using Visual Basic 6. It was
         mostly creating hex/memory editors and packet loggers for online games
         in C# and VB6. I've made the switch to Web Development and couldn't be
         happier. I love Front End design and working closely with customer

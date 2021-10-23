@@ -64,6 +64,9 @@ export class BlenderHeader extends Component {
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.autoRotate = true;
     controls.autoRotateSpeed = 0.5;
+    controls.enableDamping = true;
+    controls.maxAzimuthAngle = (200 * Math.PI) / 80;
+    controls.minAzimuthAngle = (160 * Math.PI) / 80;
 
     camera.position.set(1, 0.1, 0);
 
