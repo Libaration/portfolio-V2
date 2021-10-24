@@ -120,6 +120,7 @@ export class BlenderHeader extends Component {
           ) : (
             ''
           )}
+
           <Box
             display="hidden"
             overflow="visible"

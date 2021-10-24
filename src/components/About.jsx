@@ -7,10 +7,12 @@ import {
   useColorModeValue,
   Avatar,
   Button,
-  Link,
+  chakra,
 } from '@chakra-ui/react';
 import { BiRightArrow } from 'react-icons/bi';
 import profilepicture from '../assets/profilepicture.jpeg';
+import { Link } from 'react-router-dom';
+
 export default function About() {
   const lightDarkBoxBackground = useColorModeValue('#4A556890', '#4A556840');
   const lightDarkText = useColorModeValue(
@@ -72,9 +74,11 @@ export default function About() {
         </Text>
       </Flex>
       <Flex maxWidth="800px" justify="center" alignItems="center">
-        <Button textsize="md" colorScheme="teal" rightIcon={<BiRightArrow />}>
-          My Portfolio
-        </Button>
+        <Link to="/portfolio">
+          <Button textsize="md" colorScheme="teal" rightIcon={<BiRightArrow />}>
+            My Portfolio
+          </Button>
+        </Link>
       </Flex>
       <Flex flexDirection="column" mr={3} ml={3} maxWidth="800px">
         <Heading
@@ -87,19 +91,19 @@ export default function About() {
           I 💙
         </Heading>
         <Text fontSize="sm" mb={10}>
-          <Link color="teal.200" href="https://instagram.com/hatecristian">
+          <chakra.a href="https://instagram.com/hatecristian" color="teal.200">
             Photography,
-          </Link>
-          <Link
+          </chakra.a>
+          <chakra.a
             color="teal.200"
             href="https://na.op.gg/summoner/userName=hatecristian"
           >
             Playing video games,
-          </Link>
+          </chakra.a>
           Skateboarding,
-          <Link color="teal.200" href="https://soundcloud.com/hatecristian">
+          <chakra.a color="teal.200" href="https://soundcloud.com/hatecristian">
             Making music,
-          </Link>
+          </chakra.a>
           and Designing UI's
         </Text>
       </Flex>
