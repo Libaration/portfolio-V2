@@ -7,6 +7,7 @@ import {
   useColorModeValue,
   Avatar,
   Button,
+  Link,
 } from '@chakra-ui/react';
 import { BiRightArrow } from 'react-icons/bi';
 import profilepicture from '../assets/profilepicture.jpeg';
@@ -52,10 +53,16 @@ export default function About() {
         </Box>
       </Flex>
       <Flex flexDirection="column" mr={3} ml={3} maxWidth="800px">
-        <Heading size="md" textDecoration="underline" mt={3}>
+        <Heading
+          size="md"
+          textDecoration="underline"
+          mt={3}
+          textDecorationStyle="dotted"
+          sx={{ textUnderlineOffset: '0.1em' }}
+        >
           About
         </Heading>
-        <Text fontSize="sm" mb={10}>
+        <Text fontSize="sm" mb={5}>
           Cristian is full-stack / freelance developer based in Charlottesville
           with a passion for programming and building applications to make his
           life easier. He has always had a knack for all things creative and
@@ -64,10 +71,37 @@ export default function About() {
           producing music.
         </Text>
       </Flex>
-      <Flex maxWidth="800px" justify="center" alignItems="center" mt={-6}>
+      <Flex maxWidth="800px" justify="center" alignItems="center">
         <Button textsize="md" colorScheme="teal" rightIcon={<BiRightArrow />}>
           My Portfolio
         </Button>
+      </Flex>
+      <Flex flexDirection="column" mr={3} ml={3} maxWidth="800px">
+        <Heading
+          size="md"
+          textDecoration="underline"
+          mt={3}
+          textDecorationStyle="dotted"
+          sx={{ textUnderlineOffset: '0.1em' }}
+        >
+          I 💙
+        </Heading>
+        <Text fontSize="sm" mb={10}>
+          <Link color="teal.200" href="https://instagram.com/hatecristian">
+            Photography,
+          </Link>
+          <Link
+            color="teal.200"
+            href="https://na.op.gg/summoner/userName=hatecristian"
+          >
+            Playing video games,
+          </Link>
+          Skateboarding,
+          <Link color="teal.200" href="https://soundcloud.com/hatecristian">
+            Making music,
+          </Link>
+          and Designing UI's
+        </Text>
       </Flex>
     </>
   );
