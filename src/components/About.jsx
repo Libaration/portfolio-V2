@@ -6,7 +6,9 @@ import {
   Heading,
   useColorModeValue,
   Avatar,
+  Button,
 } from '@chakra-ui/react';
+import { BiRightArrow } from 'react-icons/bi';
 import profilepicture from '../assets/profilepicture.jpeg';
 export default function About() {
   const lightDarkBoxBackground = useColorModeValue('#4A556890', '#4A556840');
@@ -61,6 +63,11 @@ export default function About() {
           code. When not programming he loves photography,cinematography and
           producing music.
         </Text>
+      </Flex>
+      <Flex maxWidth="800px" justify="center" alignItems="center" mt={-6}>
+        <Button textsize="md" colorScheme="teal" rightIcon={<BiRightArrow />}>
+          My Portfolio
+        </Button>
       </Flex>
     </>
   );
