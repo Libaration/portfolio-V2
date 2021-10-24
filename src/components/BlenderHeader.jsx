@@ -4,12 +4,15 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import * as dat from 'dat.gui';
 import roomRender from '../assets/roomRender.gltf';
-import { Box, Flex, useColorMode } from '@chakra-ui/react';
+import { Box, Flex, Spinner } from '@chakra-ui/react';
 
 export class BlenderHeader extends Component {
   constructor() {
     super();
     this.rootRef = React.createRef();
+    this.state = {
+      loading: false,
+    };
   }
 
   componentDidMount() {
@@ -24,13 +27,18 @@ export class BlenderHeader extends Component {
     const loader = new GLTFLoader();
     loader.load(
       roomRender,
-      function (gltf) {
+      gltf => {
         gltf.scene.scale.set(0.8, 0.8, 0.8);
         gltf.scene.rotation.set(0, 0, 0);
         gltf.scene.scale.multiplyScalar(1 / 10);
         gltf.scene.position.x = 0;
         gltf.scene.position.y = -0.2;
         scene.add(gltf.scene);
+        this.setState({ loading: false });
+        this.rootRef.current.style.display = 'block';
+      },
+      xhr => {
+        this.setState({ loading: true });
       },
       function (error) {
         console.log(error);
@@ -101,14 +109,27 @@ export class BlenderHeader extends Component {
         mt={-12}
         zIndex={0}
       >
-        <Box
-          overflow="visible"
-          id="three"
-          ref={this.rootRef}
-          w={'100%'}
-          h={'130%'}
-          zIndex={0}
-        ></Box>
+        <Box width="100%" textAlign="center" position="relative">
+          {this.state.loading ? (
+            <Spinner
+              size="xl"
+              position="absolute"
+              top="50%"
+              transform="translateY(-50%)"
+            />
+          ) : (
+            ''
+          )}
+          <Box
+            display="hidden"
+            overflow="visible"
+            id="three"
+            ref={this.rootRef}
+            w={'100%'}
+            h={'130%'}
+            zIndex={0}
+          ></Box>
+        </Box>
       </Flex>
     );
   }
