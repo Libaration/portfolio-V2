@@ -28,7 +28,7 @@ export default function Banner() {
             <ColorModeSwitcher />
           </Box>
           <Box>
-            <Menu>
+            <Menu zIndex={2}>
               <MenuButton
                 as={IconButton}
                 aria-label="Options"
@@ -41,6 +41,9 @@ export default function Banner() {
                 </Link>
                 <Link href="/portfolio">
                   <MenuItem>Projects</MenuItem>
+                </Link>
+                <Link href="/blog">
+                  <MenuItem>Blog</MenuItem>
                 </Link>
               </MenuList>
             </Menu>

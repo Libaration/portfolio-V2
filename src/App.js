@@ -4,6 +4,7 @@ import Portfolio from './components/Portfolio.jsx';
 import BlenderHeader from './components/BlenderHeader';
 import Footer from './components/Footer.jsx';
 import About from './components/About.jsx';
+import BlogContainer from './components/BlogContainer.jsx';
 import { Route, Switch } from 'react-router-dom';
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
 
         <Route path="/portfolio">
           <Portfolio />
+        </Route>
+        <Route path="/blog">
+          <BlogContainer />
         </Route>
       </Switch>
 
