@@ -4,19 +4,23 @@ import Portfolio from './components/Portfolio.jsx';
 import BlenderHeader from './components/BlenderHeader';
 import Footer from './components/Footer.jsx';
 import About from './components/About.jsx';
-import { Flex, Box } from '@chakra-ui/react';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 function App() {
   return (
     <>
       <Banner />
-      <BlenderHeader />
-      <Route exact path="/">
-        <About />
-      </Route>
-      <Route exact path="/portfolio">
-        <Portfolio />
-      </Route>
+
+      <Switch key={Math.random()}>
+        <Route exact path="/">
+          <BlenderHeader />
+          <About />
+        </Route>
+
+        <Route path="/portfolio">
+          <Portfolio />
+        </Route>
+      </Switch>
+
       <Footer />
     </>
   );

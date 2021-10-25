@@ -9,11 +9,13 @@ import {
   Button,
   chakra,
 } from '@chakra-ui/react';
+import { motion } from 'framer-motion';
 import { BiRightArrow } from 'react-icons/bi';
 import profilepicture from '../assets/profilepicture.jpeg';
 import { Link } from 'react-router-dom';
 
 export default function About() {
+  const MotionBox = motion(Box);
   const lightDarkBoxBackground = useColorModeValue('#4A556890', '#4A556840');
   const lightDarkText = useColorModeValue(
     'linear(to-l, #ffffff, #ffffff)',
@@ -46,81 +48,102 @@ export default function About() {
             </Box>
           </Flex>
           <Flex justifyContent="space-between" mt={10} p={3}>
-            <Box>
-              <Heading fontSize={['xl', 'xl', '5xl', '5xl']}>
-                Cristian Deleon
-              </Heading>
-              <Text fontSize={['sm', 'md', 'lg']}>
-                Designer/Developer/Creator
-              </Text>
-            </Box>
+            <MotionBox
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <Box>
+                <Heading fontSize={['xl', 'xl', '5xl', '5xl']}>
+                  Cristian Deleon
+                </Heading>
+                <Text fontSize={['sm', 'md', 'lg']}>
+                  Designer/Developer/Creator
+                </Text>
+              </Box>
+            </MotionBox>
             <Box>
               <Avatar size={'xl'} name="Cristian Deleon" src={profilepicture} />
             </Box>
           </Flex>
-          <Flex flexDirection="column" mr={3} ml={3} maxWidth="800px">
-            <Heading
-              size="md"
-              textDecoration="underline"
-              mt={3}
-              textDecorationStyle="dotted"
-              sx={{ textUnderlineOffset: '0.1em' }}
-            >
-              About
-            </Heading>
-            <Text fontSize="sm" mb={5}>
-              Cristian is full-stack / freelance developer based in
-              Charlottesville with a passion for programming and building
-              applications to make his life easier. He has always had a knack
-              for all things creative and technology in general. He loves
-              solving real-life problems through code. When not programming he
-              loves photography,cinematography and producing music.
-            </Text>
-          </Flex>
-          <Flex maxWidth="800px" justify="center" alignItems="center">
-            <Link to="/portfolio">
-              <Button
-                textsize="md"
-                colorScheme="teal"
-                rightIcon={<BiRightArrow />}
+          <MotionBox
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5 }}
+            exit={{ opacity: 0 }}
+          >
+            {' '}
+            <Flex flexDirection="column" mr={3} ml={3} maxWidth="800px">
+              <Heading
+                size="md"
+                textDecoration="underline"
+                mt={3}
+                textDecorationStyle="dotted"
+                sx={{ textUnderlineOffset: '0.1em' }}
               >
-                My Portfolio
-              </Button>
-            </Link>
-          </Flex>
-          <Flex flexDirection="column" mr={3} ml={3} maxWidth="800px">
-            <Heading
-              size="md"
-              textDecoration="underline"
-              mt={3}
-              textDecorationStyle="dotted"
-              sx={{ textUnderlineOffset: '0.1em' }}
-            >
-              I 💙
-            </Heading>
-            <Text fontSize="sm" mb={10}>
-              <chakra.a
-                href="https://instagram.com/hatecristian"
-                color="teal.200"
+                About
+              </Heading>
+              <Text fontSize="sm" mb={5}>
+                Cristian is full-stack / freelance developer based in
+                Charlottesville with a passion for programming and building
+                applications to make his life easier. He has always had a knack
+                for all things creative and technology in general. He loves
+                solving real-life problems through code. When not programming he
+                loves photography,cinematography and producing music.
+              </Text>
+            </Flex>
+            <Flex maxWidth="800px" justify="center" alignItems="center">
+              <Link to="/portfolio">
+                <Button
+                  textsize="md"
+                  colorScheme="teal"
+                  rightIcon={<BiRightArrow />}
+                >
+                  My Portfolio
+                </Button>
+              </Link>
+            </Flex>
+          </MotionBox>
+          <MotionBox
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <Flex flexDirection="column" mr={3} ml={3} maxWidth="800px">
+              <Heading
+                size="md"
+                textDecoration="underline"
+                mt={3}
+                textDecorationStyle="dotted"
+                sx={{ textUnderlineOffset: '0.1em' }}
               >
-                Photography,
-              </chakra.a>
-              <chakra.a
-                color="teal.200"
-                href="https://na.op.gg/summoner/userName=hatecristian"
-              >
-                Playing video games,
-              </chakra.a>
-              Skateboarding,
-              <chakra.a
-                color="teal.200"
-                href="https://soundcloud.com/hatecristian"
-              >
-                Making music,
-              </chakra.a>
-              and Designing UI's
-            </Text>
-          </Flex>
+                I 💙
+              </Heading>
+              <Text fontSize="sm" mb={10}>
+                <chakra.a
+                  href="https://instagram.com/hatecristian"
+                  color="teal.200"
+                >
+                  Photography,
+                </chakra.a>
+                <chakra.a
+                  color="teal.200"
+                  href="https://na.op.gg/summoner/userName=hatecristian"
+                >
+                  Playing video games,
+                </chakra.a>
+                Skateboarding,
+                <chakra.a
+                  color="teal.200"
+                  href="https://soundcloud.com/hatecristian"
+                >
+                  Making music,
+                </chakra.a>
+                and Designing UI's
+              </Text>
+            </Flex>
+          </MotionBox>
         </Box>
       </Flex>
     </>
