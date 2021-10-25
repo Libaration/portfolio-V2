@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Flex, Box, Text } from '@chakra-ui/react';
 import AllProjects from '../components/pages/AllProjects';
 import Estateauction from '../components/pages/Estateauction';
-import { Switch, Route, useRouteMatch } from 'react-router-dom';
+import { Switch, Route, useRouteMatch, Link } from 'react-router-dom';
 import { BiRightArrowAlt } from 'react-icons/bi';
 import { motion } from 'framer-motion';
 export default function Portfolio() {
@@ -16,7 +16,9 @@ export default function Portfolio() {
   const coloredLocation = () => {
     return (
       <Flex alignItems="center">
-        <Text color="teal.500">Works </Text>
+        <Link to="/portfolio">
+          <Text color="teal.500">Works </Text>
+        </Link>
         <BiRightArrowAlt />
         <Text fontSize="lg" fontWeight="bold">
           {currentLocation}
@@ -50,7 +52,9 @@ export default function Portfolio() {
                 {currentLocation ? (
                   coloredLocation()
                 ) : (
-                  <Text fontWeight="bold">Works</Text>
+                  <Text fontWeight="bold" fontSize="lg">
+                    Works
+                  </Text>
                 )}
               </Text>
             </Box>

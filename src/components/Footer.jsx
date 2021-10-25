@@ -4,12 +4,14 @@ import { Image, Box, Flex, Text } from '@chakra-ui/react';
 
 export default function Footer() {
   return (
-    <Flex justifyContent="right">
+    <Flex justifyContent="right" mt={5}>
       <Box>
-        <Text>Made with ❤️ using Chakra UI && React</Text>
+        <Text fontSize="xs">
+          Made with ❤️ using Chakra UI, ThreeJS and React
+        </Text>
       </Box>
-      <Box ml={3}>
-        <Image h={5} src={logo} />
+      <Box ml={2} mr={2}>
+        <Image h={4} src={logo} />
       </Box>
     </Flex>
   );
