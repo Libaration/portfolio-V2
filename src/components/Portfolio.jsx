@@ -6,6 +6,7 @@ import { Switch, Route, useRouteMatch, Link } from 'react-router-dom';
 import { BiRightArrowAlt } from 'react-icons/bi';
 import { motion } from 'framer-motion';
 import HabboShow from './pages/HabboShow';
+import FeedDesignerShow from './pages/FeedDesignerShow';
 export default function Portfolio() {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -66,6 +67,9 @@ export default function Portfolio() {
               </Route>
               <Route path={`${match.path}/habbo`}>
                 <HabboShow setCurrentLocation={setCurrentLocation} />
+              </Route>
+              <Route path={`${match.path}/feeddesigner`}>
+                <FeedDesignerShow setCurrentLocation={setCurrentLocation} />
               </Route>
 
               <AllProjects setCurrentLocation={setCurrentLocation} />
