@@ -8,13 +8,6 @@ import { motion } from 'framer-motion';
 export default function Portfolio() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    window.addEventListener(
-      'resize',
-      function (event) {
-        event.stopImmediatePropagation();
-      },
-      true
-    );
   }, []);
   let match = useRouteMatch();
   const MotionBox = motion(Box);
