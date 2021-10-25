@@ -11,6 +11,7 @@ import {
 } from '@chakra-ui/react';
 import { Badge } from '@chakra-ui/react';
 import { FcOk } from 'react-icons/fc';
+import ReactPlayer from 'react-player/lazy';
 import flavoroftheweek from '../../assets/portfolio/flavoroftheweek.mov';
 export default function FlavorOfTheWeekShow(props) {
   useEffect(() => {
@@ -26,10 +27,7 @@ export default function FlavorOfTheWeekShow(props) {
           alignItems="center"
           textAlign="center"
         >
-          <video width="515" height="245" controls>
-            <source src={flavoroftheweek} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <ReactPlayer url={flavoroftheweek} width="100%" controls="true" />
         </Flex>
       </Box>
       <Box pl={5} pr={5}>

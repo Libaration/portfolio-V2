@@ -12,6 +12,7 @@ import {
 import { Badge } from '@chakra-ui/react';
 import { FcOk } from 'react-icons/fc';
 import crudspace from '../../assets/portfolio/crudspace.mp4';
+import ReactPlayer from 'react-player/lazy';
 export default function CrudSpaceShow(props) {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -26,10 +27,7 @@ export default function CrudSpaceShow(props) {
           alignItems="center"
           textAlign="center"
         >
-          <video width="515" height="245" controls>
-            <source src={crudspace} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <ReactPlayer url={crudspace} width="100%" controls="true" />
         </Flex>
       </Box>
       <Box pl={5} pr={5}>

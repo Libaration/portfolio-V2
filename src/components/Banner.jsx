@@ -19,7 +19,7 @@ export default function Banner() {
   const logoToggle = useColorModeValue(logolight, logo);
   return (
     <header>
-      <Flex align-items="center" zIndex={2} position="relative">
+      <Flex align-items="center" zIndex="9999" position="relative">
         <Box>
           <Image src={logoToggle} h="auto" w={[300, 400, 500]} mt={1} />
         </Box>
@@ -28,7 +28,7 @@ export default function Banner() {
             <ColorModeSwitcher />
           </Box>
           <Box>
-            <Menu zIndex={2}>
+            <Menu zIndex="9999">
               <MenuButton
                 as={IconButton}
                 aria-label="Options"

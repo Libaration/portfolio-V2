@@ -51,6 +51,7 @@ export default function FeedDesignerShow(props) {
                 <source
                   src="https://user-images.githubusercontent.com/11550216/120419398-5eb99800-c330-11eb-8967-f0e261138b4d.mp4"
                   type="video/mp4"
+                  preload="auto"
                 />
                 Your browser does not support the video tag.
               </video>
