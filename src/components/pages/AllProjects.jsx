@@ -3,11 +3,14 @@ import ea1 from '../../assets/portfolio/ea1.jpeg';
 import fd1 from '../../assets/portfolio/fd1.jpg';
 import Project from '../Project';
 import Habbo from '../Habbo';
+import { Link } from 'react-router-dom';
 export default function AllProjects(props) {
   props.setCurrentLocation('');
   return (
     <>
-      <Habbo />
+      <Link to="/portfolio/habbo/">
+        <Habbo />
+      </Link>
       <Project
         src={ea1}
         title="Estate Auction"

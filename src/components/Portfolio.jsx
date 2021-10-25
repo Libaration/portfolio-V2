@@ -5,6 +5,7 @@ import Estateauction from '../components/pages/Estateauction';
 import { Switch, Route, useRouteMatch, Link } from 'react-router-dom';
 import { BiRightArrowAlt } from 'react-icons/bi';
 import { motion } from 'framer-motion';
+import HabboShow from './pages/HabboShow';
 export default function Portfolio() {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -62,6 +63,9 @@ export default function Portfolio() {
             <Switch>
               <Route path={`${match.path}/estateAuction`}>
                 <Estateauction setCurrentLocation={setCurrentLocation} />
+              </Route>
+              <Route path={`${match.path}/habbo`}>
+                <HabboShow setCurrentLocation={setCurrentLocation} />
               </Route>
 
               <AllProjects setCurrentLocation={setCurrentLocation} />

@@ -7,6 +7,7 @@ import {
   ListItem,
   ListIcon,
   Image,
+  Link,
 } from '@chakra-ui/react';
 import { Badge } from '@chakra-ui/react';
 import { FcOk } from 'react-icons/fc';
@@ -93,6 +94,13 @@ export default function Estateauction(props) {
           <Badge colorScheme="green">Stack</Badge>
           <Text as="span" pl={2} fontSize="sm">
             Typescript, React, Ruby, Rails
+          </Text>
+          <br />
+          <Badge colorScheme="green">Github</Badge>
+          <Text as="span" pl={2} fontSize="sm" color="teal.500">
+            <Link href="https://github.com/Libaration/Estate-Auction">
+              Source
+            </Link>
           </Text>
           <br />
           <Badge colorScheme="green">Details</Badge>
