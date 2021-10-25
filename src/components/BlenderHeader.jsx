@@ -85,13 +85,17 @@ export class BlenderHeader extends Component {
     renderer.outputEncoding = THREE.sRGBEncoding;
 
     this.rootRef.current.appendChild(renderer.domElement);
-    window.addEventListener('resize', function () {
-      const width = document.getElementById('three').clientWidth;
-      const height = document.getElementById('three').clientHeight;
-      renderer.setSize(width, height);
-      camera.aspect = width / height;
-      camera.updateProjectionMatrix();
-    });
+    const resizeHandle = () => {
+      let threeDiv = document.getElementById('three');
+      if (threeDiv !== null) {
+        const width = document.getElementById('three').clientWidth;
+        const height = document.getElementById('three').clientHeight;
+        renderer.setSize(width, height);
+        camera.aspect = width / height;
+        camera.updateProjectionMatrix();
+      }
+    };
+    window.addEventListener('resize', resizeHandle, false);
     function animate() {
       controls.update();
       requestAnimationFrame(animate);

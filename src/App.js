@@ -9,8 +9,7 @@ function App() {
   return (
     <>
       <Banner />
-
-      <Switch key={Math.random()}>
+      <Switch>
         <Route exact path="/">
           <BlenderHeader />
           <About />

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Flex, Box, Text } from '@chakra-ui/react';
 import AllProjects from '../components/pages/AllProjects';
 import Estateauction from '../components/pages/Estateauction';
@@ -6,6 +6,16 @@ import { Switch, Route, useRouteMatch } from 'react-router-dom';
 import { BiRightArrowAlt } from 'react-icons/bi';
 import { motion } from 'framer-motion';
 export default function Portfolio() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    window.addEventListener(
+      'resize',
+      function (event) {
+        event.stopImmediatePropagation();
+      },
+      true
+    );
+  }, []);
   let match = useRouteMatch();
   const MotionBox = motion(Box);
   const [currentLocation, setCurrentLocation] = useState('');
