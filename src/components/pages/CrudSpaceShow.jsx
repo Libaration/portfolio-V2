@@ -27,7 +27,11 @@ export default function CrudSpaceShow(props) {
           alignItems="center"
           textAlign="center"
         >
-          <ReactPlayer url={crudspace} width="100%" controls="true" />
+          <ReactPlayer
+            url="https://streamable.com/dqvw7o"
+            width="100%"
+            controls="true"
+          />
         </Flex>
       </Box>
       <Box pl={5} pr={5}>

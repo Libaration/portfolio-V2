@@ -27,7 +27,11 @@ export default function FlavorOfTheWeekShow(props) {
           alignItems="center"
           textAlign="center"
         >
-          <ReactPlayer url={flavoroftheweek} width="100%" controls="true" />
+          <ReactPlayer
+            url="https://streamable.com/z3ml3l"
+            width="100%"
+            controls="true"
+          />
         </Flex>
       </Box>
       <Box pl={5} pr={5}>
