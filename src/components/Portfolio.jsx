@@ -8,6 +8,7 @@ import { motion } from 'framer-motion';
 import HabboShow from './pages/HabboShow';
 import FeedDesignerShow from './pages/FeedDesignerShow';
 import FlavorOfTheWeekShow from './pages/FlavorOfTheWeekShow';
+import CrudSpaceShow from './pages/CrudSpaceShow';
 export default function Portfolio() {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -74,6 +75,9 @@ export default function Portfolio() {
               </Route>
               <Route path={`${match.path}/flavoroftheweek`}>
                 <FlavorOfTheWeekShow setCurrentLocation={setCurrentLocation} />
+              </Route>
+              <Route path={`${match.path}/crudspace`}>
+                <CrudSpaceShow setCurrentLocation={setCurrentLocation} />
               </Route>
 
               <AllProjects setCurrentLocation={setCurrentLocation} />

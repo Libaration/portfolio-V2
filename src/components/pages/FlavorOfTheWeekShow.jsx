@@ -52,7 +52,9 @@ export default function FlavorOfTheWeekShow(props) {
         <br />
         <Badge colorScheme="green">Github</Badge>
         <Text as="span" pl={2} fontSize="sm" color="teal.500">
-          <Link href="https://github.com/Libaration/feed-designer">Source</Link>
+          <Link href="https://github.com/Libaration/flavoroftheweek">
+            Source
+          </Link>
         </Text>
         <br />
         <Badge colorScheme="green">Details</Badge>
