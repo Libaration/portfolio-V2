@@ -10,17 +10,13 @@ function App() {
   return (
     <>
       <Banner />
-      <BlenderHeader />
-      <Flex justifyContent="center">
-        <Box maxWidth={900}>
-          <Route exact path="/">
-            <About />
-          </Route>
-          <Route exact path="/portfolio">
-            <Portfolio />
-          </Route>
-        </Box>
-      </Flex>
+      {/* <BlenderHeader /> */}
+      <Route exact path="/">
+        <About />
+      </Route>
+      <Route exact path="/portfolio">
+        <Portfolio />
+      </Route>
       <Footer />
     </>
   );
