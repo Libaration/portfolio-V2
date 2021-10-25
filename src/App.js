@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <Banner />
-      {/* <BlenderHeader /> */}
+      <BlenderHeader />
       <Route exact path="/">
         <About />
       </Route>

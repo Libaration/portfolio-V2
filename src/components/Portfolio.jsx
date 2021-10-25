@@ -6,7 +6,7 @@ import Project from './Project';
 import Habbo from './Habbo';
 export default function Portfolio() {
   return (
-    <Flex alignItems="center" justifyContent="center">
+    <Flex alignItems="center" justifyContent="center" mt={20}>
       <Flex
         flexWrap="wrap"
         alignItems="center"
