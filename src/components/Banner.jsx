@@ -9,6 +9,7 @@ import {
   IconButton,
   Image,
   useColorModeValue,
+  Link,
 } from '@chakra-ui/react';
 import { ColorModeSwitcher } from '../ColorModeSwitcher';
 import { GiHamburgerMenu } from 'react-icons/gi';
@@ -35,9 +36,12 @@ export default function Banner() {
                 icon={<GiHamburgerMenu />}
               ></MenuButton>
               <MenuList>
-                <MenuItem>Home</MenuItem>
-                <MenuItem>Projects</MenuItem>
-                <MenuItem>About</MenuItem>
+                <Link href="/">
+                  <MenuItem>About</MenuItem>
+                </Link>
+                <Link href="/portfolio">
+                  <MenuItem>Projects</MenuItem>
+                </Link>
               </MenuList>
             </Menu>
           </Box>

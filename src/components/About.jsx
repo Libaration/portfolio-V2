@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import {
   Box,
   Flex,
@@ -13,8 +13,12 @@ import { motion } from 'framer-motion';
 import { BiRightArrow } from 'react-icons/bi';
 import profilepicture from '../assets/profilepicture.jpeg';
 import { Link } from 'react-router-dom';
+import ReactPlayer from 'react-player/soundcloud';
 
 export default function About() {
+  const [playing, setPlaying] = useState(false);
+  const [visible, setVisible] = useState({ display: 'none' });
+  const playerRef = useRef(null);
   const MotionBox = motion(Box);
   const lightDarkBoxBackground = useColorModeValue('#4A556890', '#4A556840');
   const lightDarkText = useColorModeValue(
@@ -136,12 +140,32 @@ export default function About() {
                 Skateboarding,
                 <chakra.a
                   color="teal.200"
-                  href="https://soundcloud.com/hatecristian"
+                  onClick={() => {
+                    setPlaying(true);
+                    setVisible({ display: 'block' });
+                  }}
+                  sx={{ cursor: 'pointer' }}
                 >
                   Making music,
                 </chakra.a>
                 and Designing UI's
               </Text>
+              <MotionBox
+                animate={{ x: 0 }}
+                initial={{ x: -1000 }}
+                transition={{ ease: 'easeOut', duration: 2 }}
+              >
+                <Box mb={5}>
+                  <ReactPlayer
+                    url="https://soundcloud.com/hatecristian/bol4-some-hatecristian-remix"
+                    playing={playing}
+                    ref={playerRef}
+                    style={visible}
+                    width={350}
+                    height={100}
+                  />
+                </Box>
+              </MotionBox>
             </Flex>
           </MotionBox>
         </Box>

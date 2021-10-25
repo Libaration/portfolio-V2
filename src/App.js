@@ -11,7 +11,7 @@ function App() {
       <Banner />
       <Switch>
         <Route exact path="/">
-          <BlenderHeader />
+          {/* <BlenderHeader /> */}
           <About />
         </Route>
 
