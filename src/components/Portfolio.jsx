@@ -7,6 +7,7 @@ import { BiRightArrowAlt } from 'react-icons/bi';
 import { motion } from 'framer-motion';
 import HabboShow from './pages/HabboShow';
 import FeedDesignerShow from './pages/FeedDesignerShow';
+import FlavorOfTheWeekShow from './pages/FlavorOfTheWeekShow';
 export default function Portfolio() {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -70,6 +71,9 @@ export default function Portfolio() {
               </Route>
               <Route path={`${match.path}/feeddesigner`}>
                 <FeedDesignerShow setCurrentLocation={setCurrentLocation} />
+              </Route>
+              <Route path={`${match.path}/flavoroftheweek`}>
+                <FlavorOfTheWeekShow setCurrentLocation={setCurrentLocation} />
               </Route>
 
               <AllProjects setCurrentLocation={setCurrentLocation} />
