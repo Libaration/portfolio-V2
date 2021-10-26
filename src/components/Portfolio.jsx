@@ -9,6 +9,7 @@ import HabboShow from './pages/HabboShow';
 import FeedDesignerShow from './pages/FeedDesignerShow';
 import FlavorOfTheWeekShow from './pages/FlavorOfTheWeekShow';
 import CrudSpaceShow from './pages/CrudSpaceShow';
+import MarketMountain from './pages/MarketMountain';
 export default function Portfolio() {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -78,6 +79,9 @@ export default function Portfolio() {
               </Route>
               <Route path={`${match.path}/crudspace`}>
                 <CrudSpaceShow setCurrentLocation={setCurrentLocation} />
+              </Route>
+              <Route path={`${match.path}/marketmountain`}>
+                <MarketMountain setCurrentLocation={setCurrentLocation} />
               </Route>
 
               <AllProjects setCurrentLocation={setCurrentLocation} />
