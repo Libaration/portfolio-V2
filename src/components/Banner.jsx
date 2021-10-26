@@ -23,7 +23,7 @@ export default function Banner() {
         <Box>
           <Image src={logoToggle} h="auto" w={[300, 400, 500]} mt={1} />
         </Box>
-        <Flex w="100%" justifyContent="right">
+        <Flex w="100%" justifyContent="flex-end">
           <Box>
             <ColorModeSwitcher />
           </Box>
