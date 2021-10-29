@@ -6,6 +6,7 @@ import Project from '../Project';
 import Habbo from '../Habbo';
 import { Link } from 'react-router-dom';
 import { Flex } from '@chakra-ui/react';
+import ashland from '../../assets/portfolio/ashland.png';
 export default function AllProjects(props) {
   props.setCurrentLocation('');
   return (
@@ -13,7 +14,11 @@ export default function AllProjects(props) {
       <Link to="/portfolio/habbo/">
         <Habbo />
       </Link>
-
+      <Project
+        src={ashland}
+        title="Ashland Assistant"
+        description="Freelance Project for Ashland Auction. Electron / React app that serves API data on auctions in a styled email ready format for mass email marketing."
+      />
       <Project
         src={marketmountain}
         title="MarketMountain"

@@ -10,6 +10,7 @@ import FeedDesignerShow from './pages/FeedDesignerShow';
 import FlavorOfTheWeekShow from './pages/FlavorOfTheWeekShow';
 import CrudSpaceShow from './pages/CrudSpaceShow';
 import MarketMountain from './pages/MarketMountain';
+import AshlandAssistant from './pages/AshlandAssistant';
 export default function Portfolio() {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -82,6 +83,9 @@ export default function Portfolio() {
               </Route>
               <Route path={`${match.path}/marketmountain`}>
                 <MarketMountain setCurrentLocation={setCurrentLocation} />
+              </Route>
+              <Route path={`${match.path}/ashlandassistant`}>
+                <AshlandAssistant setCurrentLocation={setCurrentLocation} />
               </Route>
 
               <AllProjects setCurrentLocation={setCurrentLocation} />
