@@ -13,6 +13,7 @@ export default function Project(props) {
           justifyContent="center"
           alignItems="center"
           m={3}
+          mt={16}
         >
           <Image
             src={props.src}
