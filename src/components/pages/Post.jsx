@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Text, Flex, Image, Link } from '@chakra-ui/react';
+import { Text, Flex, Image, Link } from '@chakra-ui/react';
 
 export default function Post(props) {
   return (

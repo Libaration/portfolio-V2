@@ -12,14 +12,17 @@ export default function Project(props) {
           flexDirection="column"
           justifyContent="center"
           alignItems="center"
-          m={3}
+          m={5}
           mt={16}
+          
+         
         >
           <Image
             src={props.src}
             borderRadius="base"
             height="200px"
             objectFit="cover"
+            
           />
           <Text fontSize="xl" mt={3}>
             {props.title}

@@ -11,6 +11,7 @@ import FlavorOfTheWeekShow from './pages/FlavorOfTheWeekShow';
 import CrudSpaceShow from './pages/CrudSpaceShow';
 import MarketMountain from './pages/MarketMountain';
 import AshlandAssistant from './pages/AshlandAssistant';
+import LofiHours from './pages/LofiHours'
 export default function Portfolio() {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -86,6 +87,9 @@ export default function Portfolio() {
               </Route>
               <Route path={`${match.path}/ashlandassistant`}>
                 <AshlandAssistant setCurrentLocation={setCurrentLocation} />
+              </Route>
+              <Route path={`${match.path}/lofihours`}>
+                <LofiHours setCurrentLocation={setCurrentLocation} />
               </Route>
 
               <AllProjects setCurrentLocation={setCurrentLocation} />

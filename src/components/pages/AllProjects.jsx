@@ -7,6 +7,7 @@ import Habbo from '../Habbo';
 import { Link } from 'react-router-dom';
 import { Flex } from '@chakra-ui/react';
 import ashland from '../../assets/portfolio/ashland.png';
+import lofihours from '../../assets/portfolio/lofihours.png'
 export default function AllProjects(props) {
   props.setCurrentLocation('');
   return (
@@ -38,6 +39,11 @@ export default function AllProjects(props) {
         src="https://camo.githubusercontent.com/606595f249a8648b930b382ce5a418e3eee7d2c2ff34c53df2e8ccb4f5f3e0fa/68747470733a2f2f692e6779617a6f2e636f6d2f36333361633431396239613736383062343836666433303165666335383930322e6a7067"
         title="CRUDSpace"
         description="An example of basic CRUD design, 2005 Myspace recoded with Ruby/Sinatra"
+      />
+      <Project
+        src={lofihours}
+        title="Lofi Hours"
+        description="An example of audio manipulation using JS. Uses Spotify and OAuth to access API and create a lofi aesthetic."
       />
       <Project
         src="https://user-images.githubusercontent.com/11550216/110198457-9f347300-7e20-11eb-971c-adaea6d2e3c6.gif"

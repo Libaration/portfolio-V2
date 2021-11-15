@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Flex, Box, Text } from '@chakra-ui/react';
+import { Flex, Box, Text, Spinner } from '@chakra-ui/react';
 import Post from './pages/Post';
 
 export default function BlogContainer() {
@@ -37,7 +37,10 @@ export default function BlogContainer() {
             Blog
           </Text>
         </Box>
-        <Box>{posts ? renderPosts() : 'false'}</Box>
+        <Box>{posts ? renderPosts() : <Spinner
+              size="xl"
+              position="absolute"
+            />}</Box>
       </Flex>
     </Flex>
   );
