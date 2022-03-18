@@ -12,25 +12,14 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@main
-
-    - name: Set up Node version ${{env.version}}
-      uses: actions/setup-node@v1
-      with: 
-        node-version: ${{ env.version }}
-
-    - name: Install Dependencies
-      run: npm install 
-
-    - name: Build
-      run: npm run build --if-present
-
-    - name: 'Deploy to Azure'
+    - name: 'Build and Deploy to Azure'
+      id: builddeploy
       uses: Azure/static-web-apps-deploy@v1
       with:
         azure_static_web_apps_api_token: ${{ secrets.AZUREDEPLOYMENTTOKEN }}
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         action: "upload"
-        app_location: "src"
+        app_location: "/"
         output_location: "build"
 
 
