@@ -1,0 +1,33 @@
+on: 
+  push:
+    branches:
+    - main
+
+env:
+  version: 16.14.2
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repository
+    - uses: actions/checkout@main
+
+    - name: Set up Node version ${{env.version}}
+    - uses: actions/setup-node@v1
+    - with: 
+        node-version: ${{ env.version }}
+
+    - name: Install Dependencies
+      run: npm install 
+
+    - name: Build
+      run: npm run build --if-present
+
+    - name: 'Run Azure webapp deploy action using publish profile credentials'
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: web-azure-portfolio-prod-eastus2
+        publish-profile: ${{ secrets.AZUREDEPLOYMENTTOKEN }}
+
+

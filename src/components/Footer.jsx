@@ -7,7 +7,7 @@ export default function Footer() {
     <Flex justifyContent="right" mt={5}>
       <Box>
         <Text fontSize="xs">
-          Made with ❤️ using Chakra UI, ThreeJS and React
+          Made using Chakra UI, ThreeJS and React
         </Text>
       </Box>
       <Box ml={2} mr={2}>
