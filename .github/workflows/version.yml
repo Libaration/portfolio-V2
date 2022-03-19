@@ -15,9 +15,9 @@ jobs:
       - run: npm install
       - run: |
           npm --no-git-tag-version version patch
-          echo "::set-output currentVersion={npm run version}"
+          echo "::set-output  name=currentVersion::{npm run version}"
       - name: test
-        run: echo {{ steps.vars.currentVersion }}
+        run: echo ${{ steps.vars.currentVersion }}
       - name: Bump Version Commit
         uses: EndBug/add-and-commit@v9
         with:
