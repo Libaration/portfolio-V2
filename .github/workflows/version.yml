@@ -23,3 +23,4 @@ jobs:
           default_author: github_actions
           message: Bump to ${{steps.vars.currentVersion}}
           tag: v${{steps.vars.currentVersion}}
+          env:GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
