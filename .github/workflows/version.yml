@@ -1,11 +1,11 @@
 on:
   push:
-    tags: [minor]
 
 jobs:
   increment-version:
     name: increment package version
     runs-on: ubuntu-latest
+    if: "startsWith(github.event.head_commit.message, '[BUMP]')"
 
     steps:
       - name: Checkout Repository
