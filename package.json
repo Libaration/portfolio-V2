@@ -26,7 +26,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy-production": "react-scripts build && scp -r ./build/* nodejs@147.182.217.49:/home/nodejs/portfolio/build"
   },
   "eslintConfig": {
     "extends": "react-app"
