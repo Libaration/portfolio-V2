@@ -16,7 +16,6 @@ jobs:
         id: vars
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Set Variables
         run: |
           npm version patch
           npm run version
