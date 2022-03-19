@@ -11,11 +11,12 @@ jobs:
       - uses: actions/checkout@v2
       - name: Setup node
         uses: actions/setup-node@v2
-        id: vars
       - run: npm install
       - run: |
           npm --no-git-tag-version version patch
-          echo "::set-output  name=currentVersion::$(npm run version)"
+          echo "::set-output name=current-version::$(npm run version)"
+          echo "::set-output name=currentVersion::$(npm run version)"
+        id: vars
       - name: test
         run: echo ${{ steps.vars.currentVersion }}
       - name: Bump Version Commit
