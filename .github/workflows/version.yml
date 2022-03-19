@@ -7,8 +7,10 @@ jobs:
     name: increment package version
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v2
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Setup Node
+        uses: actions/setup-node@v2
       - name: Increment and Set Version Variable
         id: vars
       - run: |
@@ -16,7 +18,7 @@ jobs:
           npm run version
           echo ::set-output currentVersion={npm run version}
       - name: Bump Version
-      - uses: EndBug/add-and-commit@v9
+        uses: EndBug/add-and-commit@v9
         with:
           default_author: github_actions
           message: Bump to ${{steps.vars.currentVersion}}
