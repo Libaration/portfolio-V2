@@ -13,7 +13,6 @@ jobs:
         uses: actions/setup-node@v2
         id: vars
       - run: npm install
-      - run: npm test
       - run: |
           npm version patch
           npm run version
