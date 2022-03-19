@@ -13,7 +13,7 @@ jobs:
         uses: actions/setup-node@v2
       - name: Increment and Set Version Variable
         id: vars
-      - run: |
+        run: |
           npm version patch
           npm run version
           echo ::set-output currentVersion={npm run version}
