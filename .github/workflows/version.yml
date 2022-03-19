@@ -6,6 +6,7 @@ jobs:
   increment-version:
     name: increment package version
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
