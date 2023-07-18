@@ -6,7 +6,6 @@ import {
   List,
   ListItem,
   ListIcon,
-  Image,
   Link,
 } from '@chakra-ui/react';
 import { Badge } from '@chakra-ui/react';
@@ -46,11 +45,12 @@ export default function Lofihours(props) {
             <Link href="http://lo-fi-hours.vercel.app/">View</Link>
           </Text>
           <br />
-          
+
           <Badge colorScheme="green">Objective</Badge>
           <Text as="span" pl={2} fontSize="sm">
-        A project to learn about audio manipulation in javascript.
-          A NextJS/React/TailwindCSS app that slows/reverbs any song using Spotify and OAuth to access API and create a lofi aesthetic.
+            A project to learn about audio manipulation in javascript. A
+            NextJS/React/TailwindCSS app that slows/reverbs any song using
+            Spotify and OAuth to access API and create a lofi aesthetic.
           </Text>
           <br />
           <Badge colorScheme="green">Stack</Badge>
@@ -60,9 +60,7 @@ export default function Lofihours(props) {
           <br />
           <Badge colorScheme="green">Github</Badge>
           <Text as="span" pl={2} fontSize="sm" color="teal.500">
-            <Link href="https://github.com/Libaration/LoFiHours">
-              Source
-            </Link>
+            <Link href="https://github.com/Libaration/LoFiHours">Source</Link>
           </Text>
           <br />
           <Badge colorScheme="green">Details</Badge>

@@ -6,12 +6,10 @@ import {
   List,
   ListItem,
   ListIcon,
-  Image,
   Link,
 } from '@chakra-ui/react';
 import { Badge } from '@chakra-ui/react';
 import { FcOk } from 'react-icons/fc';
-import crudspace from '../../assets/portfolio/crudspace.mp4';
 import ReactPlayer from 'react-player/lazy';
 export default function CrudSpaceShow(props) {
   useEffect(() => {

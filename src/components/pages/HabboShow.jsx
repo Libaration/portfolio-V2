@@ -6,7 +6,6 @@ import {
   List,
   ListItem,
   ListIcon,
-  Image,
   Link,
 } from '@chakra-ui/react';
 import { Badge } from '@chakra-ui/react';

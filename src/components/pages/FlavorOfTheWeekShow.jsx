@@ -6,13 +6,11 @@ import {
   List,
   ListItem,
   ListIcon,
-  Image,
   Link,
 } from '@chakra-ui/react';
 import { Badge } from '@chakra-ui/react';
 import { FcOk } from 'react-icons/fc';
 import ReactPlayer from 'react-player/lazy';
-import flavoroftheweek from '../../assets/portfolio/flavoroftheweek.mov';
 export default function FlavorOfTheWeekShow(props) {
   useEffect(() => {
     window.scrollTo(0, 0);

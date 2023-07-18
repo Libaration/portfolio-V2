@@ -6,7 +6,6 @@ import {
   List,
   ListItem,
   ListIcon,
-  Image,
   Link,
 } from '@chakra-ui/react';
 import { Badge } from '@chakra-ui/react';
@@ -46,7 +45,7 @@ export default function AshlandAssistant(props) {
             View
           </Text> */}
           <br />
-          <Badge colorScheme="green">v0.0.1</Badge>
+          <Badge colorScheme="green">v0.2.2</Badge>
           <br />
           <Badge colorScheme="green">Objective</Badge>
           <Text as="span" pl={2} fontSize="sm">

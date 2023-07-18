@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import * as dat from 'dat.gui';
+
 import roomRender from '../assets/roomRender.gltf';
 import { Box, Flex, Spinner } from '@chakra-ui/react';
 

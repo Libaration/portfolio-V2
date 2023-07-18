@@ -31,7 +31,9 @@ export default function Habbo() {
         HabboHTML5
       </Text>
 
-      <Text>A recreation of an Adobe Shockwave game in Phaser3/Vanilla JS</Text>
+      <Text fontSize={'xs'}>
+        A recreation of an Adobe Shockwave game in Phaser3/Vanilla JS
+      </Text>
     </Flex>
   );
 }
