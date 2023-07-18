@@ -1,17 +1,22 @@
 import React from 'react';
 import ea1 from '../../assets/portfolio/ea1.jpeg';
 import fd1 from '../../assets/portfolio/fd1.jpg';
-import marketmountain from '../../assets/portfolio/marketmountain.png';
 import Project from '../Project';
 import Habbo from '../Habbo';
 import { Link } from 'react-router-dom';
-import { Flex } from '@chakra-ui/react';
 import ashland from '../../assets/portfolio/ashland.png';
 import lofihours from '../../assets/portfolio/lofihours.png';
+import hablogintegration from '../../assets/portfolio/hablogintegration.mov';
 export default function AllProjects(props) {
   props.setCurrentLocation('');
   return (
     <>
+      <Project
+        src={hablogintegration}
+        video={true}
+        title="Hablog"
+        description="A Rust application for handling and processing network packets, implementing a proxy to intercept and log game packets for analysis and debugging."
+      />
       <Link to="/portfolio/habbo/">
         <Habbo />
       </Link>

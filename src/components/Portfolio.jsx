@@ -9,9 +9,9 @@ import HabboShow from './pages/HabboShow';
 import FeedDesignerShow from './pages/FeedDesignerShow';
 import FlavorOfTheWeekShow from './pages/FlavorOfTheWeekShow';
 import CrudSpaceShow from './pages/CrudSpaceShow';
-import MarketMountain from './pages/MarketMountain';
 import AshlandAssistant from './pages/AshlandAssistant';
-import LofiHours from './pages/LofiHours'
+import Hablog from './pages/Hablog';
+import LofiHours from './pages/LofiHours';
 export default function Portfolio() {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -67,6 +67,9 @@ export default function Portfolio() {
             </Box>
 
             <Switch>
+              <Route path={`${match.path}/hablog`}>
+                <Hablog setCurrentLocation={setCurrentLocation} />
+              </Route>
               <Route path={`${match.path}/estateAuction`}>
                 <Estateauction setCurrentLocation={setCurrentLocation} />
               </Route>
@@ -81,9 +84,6 @@ export default function Portfolio() {
               </Route>
               <Route path={`${match.path}/crudspace`}>
                 <CrudSpaceShow setCurrentLocation={setCurrentLocation} />
-              </Route>
-              <Route path={`${match.path}/marketmountain`}>
-                <MarketMountain setCurrentLocation={setCurrentLocation} />
               </Route>
               <Route path={`${match.path}/ashlandassistant`}>
                 <AshlandAssistant setCurrentLocation={setCurrentLocation} />
