@@ -11,6 +11,7 @@ import {
 import { Badge } from '@chakra-ui/react';
 import { FcOk } from 'react-icons/fc';
 import ReactPlayer from 'react-player/lazy';
+import crudspace from '../../assets/portfolio/crudspace.mp4';
 export default function CrudSpaceShow(props) {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -26,7 +27,7 @@ export default function CrudSpaceShow(props) {
           textAlign="center"
         >
           <ReactPlayer
-            url="https://streamable.com/dqvw7o"
+            url={crudspace}
             width="100%"
             controls="true"
           />

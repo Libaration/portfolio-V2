@@ -24,7 +24,7 @@ export default function Project(props) {
               alignItems={'center'}
               borderRadius={'base'}
             >
-              <video controls autoPlay muted height={'200'}>
+              <video controls muted height={'200'}>
                 <source src={props.src} type="video/mp4" preload="auto" />
                 Your browser does not support the video tag.
               </video>
