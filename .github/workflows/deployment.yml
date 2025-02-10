@@ -16,13 +16,18 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: '16.x'
+
     - name: Install dependencies
-      run: npm install --legacy-peer-deps && npm install -g typescript
+      run: |
+        npm install --legacy-peer-deps
+        npm install --save-dev typescript @types/node @types/react @types/react-dom @types/jest
+
     - name: Build
       run: npm run build
-    - name: 'Build and Deploy to Azure'
-      env: 
+      env:
         CI: false
+
+    - name: 'Deploy to Azure'
       id: builddeploy
       uses: Azure/static-web-apps-deploy@1a947af9992250f3bc2e68ad0754c0b0c11566c9
       with:
@@ -31,5 +36,3 @@ jobs:
         action: "upload"
         app_location: '/'
         app_artifact_location: 'build'
-
-
