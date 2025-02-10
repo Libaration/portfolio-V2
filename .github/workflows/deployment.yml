@@ -28,3 +28,5 @@ jobs:
         action: "upload"
         app_location: '/'
         app_artifact_location: 'build'
+        app_build_command: "npm install -g npm@8 && npm install --legacy-peer-deps && npm run build"
+        api_build_command: "rm -rf node_modules && npm install --legacy-peer-deps --force"
