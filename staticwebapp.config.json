@@ -1,5 +1,8 @@
 {
-    "platform": {
-      "apiRuntime": "node:16"
-    }
+  "platform": {
+    "apiRuntime": "node:16"
+  },
+  "buildProperties": {
+    "nodeVersion": "16.20.0"
   }
+}

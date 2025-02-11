@@ -34,5 +34,6 @@ jobs:
         azure_static_web_apps_api_token: ${{ secrets.AZUREDEPLOYMENTTOKEN }}
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         action: "upload"
-        app_location: '/'
-        app_artifact_location: 'build'
+        app_location: "/build"  # Use the build output directory
+        skip_app_build: true    # Skip Azure's build process
+        output_location: ""     # No need for output location as we're using pre-built files
